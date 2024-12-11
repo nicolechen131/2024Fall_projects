@@ -11,15 +11,15 @@ This project aims to optimize vaccine distribution strategies during pandemics b
 
 ## Project Directory Structure
     monte_carlo_vaccine_sim/
-    │ 
-    ├── main.py                    # Primary simulation script 
-    ├── run_experiments.py         # Script for executing and comparing experiments 
-    ├── data/                      # Input datasets 
-    │   └── ... 
-    ├── src/                       # Core simulation source code 
-    │   ├── vaccine_allocation.py  # Vaccine allocation logic 
-    │   ├── infections_model.py    # Infection prevention calculation 
-    │   └── ...
+    ├── data/                      
+    │   ├── population_data.csv    # Population demographics by region
+    │   ├── infection_rates.csv    # Regional infection rate data
+    │   └── vaccine_params.csv     # Vaccine parameters configuration
+    ├── src/                       
+    │   ├── __init__.py           # Package initialization
+    │   ├── simulation.py         # Core VaccineSimulation class
+    │   └── utils.py             # Data loading utilities
+    └── run_experiments.py        # Main experiment runner
 
 ## How It Works
 ### Step 1. Initialization
