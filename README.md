@@ -25,20 +25,27 @@ This project aims to optimize vaccine distribution strategies during pandemics b
 ### Step 1. Initialization
    The simulation initializes with:
    - **Population data:** Region-specific population sizes and infection rates.   
+   - **Infection rates:** Region-specific infection rates
    - **Vaccine parameters:** Availability and efficacy values.
 ### Step 2. Simulation Process    
-1. Apply uncertainty to infection rates to reflect real-world variability (default ± 10%)
-2. Allocate vaccines based on adjusted infection rates.
-3. Calculate infections prevented:
-   - Effective Vaccines = Vaccines Allocated * Vaccine Efficacy
-   - Infections Prevented = Effective Vaccines * Infection Rate
+   1. **Data Validation:** Ensures all input data meets required format and value ranges
+   2. **Simulation Validation:** Performs convergence testing with multiple iterations
+   3. **Vaccine Allocation:** Distributes vaccines based on infection rates and availability
+   4. **Impact Calculation:** Computes prevented infections using:
+     - Effective Vaccines = Vaccines Allocated × Vaccine Efficacy
+     - Infections Prevented = Effective Vaccines × Infection Rate
 ### Step 3. Experimentation
 Three scenarios are evaluated:
-1. Increased vaccine efficacy.
-2. Improved vaccine availability.
-3. Combined improvements in efficacy and availability.
+1. Increased Efficacy: Testing 20% improvement in vaccine efficacy
+2. Increased Availability: Testing 50% improvement in vaccine availability
+3. Combined Improvement: Testing both improvements simultaneously
 ### Step 4. Validation
 The simulation runs multiple iterations to ensure statistical robustness, validated through metrics like mean, standard deviation, and coefficient of variation.    
+
+### Step 5. Statistical Analysis
+- Performs t-tests to determine statistical significance
+- Generates visualizations for result interpretation
+- Calculates key metrics including mean prevention rates and improvements
 
 ## Results
 1. **Vaccine Efficacy:** A 20% increase resulted in significant reductions in infections.
@@ -53,3 +60,21 @@ The simulation runs multiple iterations to ensure statistical robustness, valida
 **Logistic Integration:** Add vaccine transportation, storage, and distribution constraints.    
 **Real-World Constraints:** Incorporate infrastructure delays, labor shortages, and unexpected disruptions. 
 **Broader Applications:** Extend the model to other public health interventions, such as medication distribution or outbreak management.
+
+## Usage
+1. Ensure required data files are in the data/ directory
+2. Run experiments:
+   
+```bash
+
+python run_experiments.py
+
+```
+
+## Requirements
+- Python 3.x
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scipy
